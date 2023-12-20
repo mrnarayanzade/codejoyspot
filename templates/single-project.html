@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+{% block content %}
+<div class="container my-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="main-img">
+                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858753_960_720.jpg" alt="ProductS">
+                    
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="main-description px-2">
+                     <h1> {{ project.description }}</h1>
+                    <div class="product-title text-bold my-3">
+                      {{ project.title }}
+                    </div>
+
+
+                    <div class="price-area my-4">
+                        <p class="old-price mb-1"><del>$100</del> <span class="old-price-discount text-danger">(20% off)</span></p>
+                        <p class="new-price text-bold mb-1">$80</p>
+                        <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
+
+                    </div>
+
+
+                    <div class="buttons d-flex my-5">
+                       <h3>Tags </h3><br>
+                       <br>
+                       {% for tag in tags %}
+                            <span  style="border: 1px solid gray;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 3px;">{{ tag.name }} </span >
+                       
+                        {% endfor %}
+                       
+                    </div>
+
+
+{{ reviews.value }}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+   
+{% endblock content %}
