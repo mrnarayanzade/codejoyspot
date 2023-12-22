@@ -1,11 +1,20 @@
 {% extends 'header.html' %}
+
 {% block content %}
 <br><br><br><br><br><br><br>
 
-<form action="" method="POST"> {{ object }}
-{% csrf_token %}
-<a href="{% url 'projects' %}">Cancel </a>
-<input type="submit" value="confirm">
+<form action="" method="POST" class="confirmation-form">
+    {{ object }}
+    {% csrf_token %}
+    <a href="{% url 'projects' %}">Cancel </a>
+    <input type="submit" value="Confirm">
 </form>
+
+<div class="confirm-box" id="confirm-box">
+    <p>Are you sure you want to confirm?</p>
+    <button id="confirm-yes">Yes</button>
+    <button id="confirm-no">No</button>
+</div>
+
 {% endblock content %}
 
